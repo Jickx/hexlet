@@ -6,15 +6,17 @@ def fizz_buzz(begin, end):
     if begin > end:
         return result
     for i in range(begin, end + 1):
+        if result:
+            result += ' '
         if i % 5 == 0 and i % 3 == 0:
-            result += 'FizzBuzz' + ' '
+            result += 'FizzBuzz'
         elif i % 5 == 0:
-            result += 'Buzz' + ' '
+            result += 'Buzz'
         elif i % 3 == 0:
-            result += 'Fizz' + ' '
+            result += 'Fizz'
         else:
-            result += f'{i}' + ' '
-    return result.strip()
+            result += f'{i}'
+    return result
 
 assert fizz_buzz(1, 5) == '1 2 Fizz 4 Buzz'
 assert fizz_buzz(11, 20) == '11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz'
